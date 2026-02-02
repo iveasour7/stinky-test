@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Critical Diagnostic Test</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 60px;
+      background-color: #f5f5f5;
+    }
+    button {
+      padding: 14px 24px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    .dramatic {
+      font-style: italic;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>🧪 Odor Analysis Program v3.1 🧪</h2>
+<p>Initializing scan...</p>
+
+<button onclick="wrongButton()">I smell amazing</button>
+<button onclick="wrongButton()">Probably the dog</button>
+<button onclick="stageTwo()">Proceed with analysis</button>
+
+<p id="message" class="dramatic"></p>
+
+<script>
+  function wrongButton() {
+    document.getElementById("message").innerText =
+      "❌ Error: Denial detected. Please try again.";
+  }
+
+  function stageTwo() {
+    document.body.innerHTML = `
+      <h2>🔬 Stage 2: Deep Scan 🔬</h2>
+      <p>Analyzing air particles...</p>
+
+      <button onclick="wrongButton2()">Abort test</button>
+      <button onclick="wrongButton2()">Blame external factors</button>
+      <button onclick="stageThree()">Continue bravely</button>
+
+      <p id="message2" class="dramatic"></p>
+    `;
+  }
+
+  function wrongButton2() {
+    document.getElementById("message2").innerText =
+      "⚠️ Warning: Cowardice detected. Scan cannot be stopped.";
+  }
+
+  function stageThree() {
+    document.body.innerHTML = `
+      <h2>📊 Final Results 📊</h2>
+      <p>Processing data...</p>
+      <p class="dramatic">Comparing results with known stink events...</p>
+      <p class="dramatic">Consulting experts...</p>
+
+      <button onclick="finalResult()">Reveal diagnosis</button>
+    `;
+  }
+
+  function finalResult() {
+    document.body.innerHTML = `
+      <h1>🚨 DIAGNOSIS 🚨</h1>
+      <h2>YOU'RE STINKY 🤢</h2>
+      <h1>P.U.!!!</h1>
+      <p>(But still deeply loved ❤️)</p>
+    `;
+  }
+</script>
+
+</body>
+</html>
